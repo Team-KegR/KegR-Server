@@ -5,7 +5,6 @@ class CreateKegs < ActiveRecord::Migration
       t.integer :validation
       t.boolean :kicked
       t.integer :rating
-      t.has_many :comments
 
       t.timestamps null: false
     end
