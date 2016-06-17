@@ -54,6 +54,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:bleongs_to)
+      params.require(:comment).permit(:content)
     end
 end
