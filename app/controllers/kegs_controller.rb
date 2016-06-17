@@ -54,6 +54,6 @@ class KegsController < ApplicationController
     end
 
     def keg_params
-      params.require(:keg).permit(:name, :validation, :kicked, :rating, :comments)
+      params.require(:keg).permit(:name, :validation, :kicked, :ratings, :comments)
     end
 end
