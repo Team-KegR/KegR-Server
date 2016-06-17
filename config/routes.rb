@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :ratings, except: [:new, :edit]
   resources :comments, except: [:new, :edit]
-  resources :kegs, only: [:index, :show]
+  resources :kegs, only: [:index, :show, :new]
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'
