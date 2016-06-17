@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160617185641) do
+ActiveRecord::Schema.define(version: 20160617190413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 20160617185641) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "score"
+    t.integer  "user_id"
+    t.integer  "keg_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["keg_id"], name: "index_ratings_on_keg_id", using: :btree
+  add_index "ratings", ["score"], name: "index_ratings_on_score", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
     t.string   "token",           null: false
@@ -60,4 +72,6 @@ ActiveRecord::Schema.define(version: 20160617185641) do
   add_foreign_key "comments", "kegs"
   add_foreign_key "comments", "users"
   add_foreign_key "examples", "users"
+  add_foreign_key "ratings", "kegs"
+  add_foreign_key "ratings", "users"
 end
