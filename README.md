@@ -2,7 +2,7 @@
 
 # KegR Beer Tracker
 
-A template for starting projects with `rails-api`. Includes authentication.
+Beer
 
 At the beginning of each cohort, update the versions in [`Gemfile`](Gemfile).
 
