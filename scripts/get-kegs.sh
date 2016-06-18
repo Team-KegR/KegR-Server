@@ -1,4 +1,2 @@
-curl --include --request GET http://localhost:3000/kegs \
+curl --include --request GET https://kegr.herokuapp.com/kegs \
   --header "Content-Type: application/json" \
-
-  
