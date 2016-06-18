@@ -1,6 +1,6 @@
 #
 class KegsController < ApplicationController
-  before_action :set_keg, only: [:show, :update, :destroy]
+  before_action :set_keg, only: [:index, :show, :update, :destroy]
 
   # GET /kegs
   # GET /kegs.json
