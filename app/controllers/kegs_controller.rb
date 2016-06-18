@@ -1,3 +1,4 @@
+#
 class KegsController < ApplicationController
   before_action :set_keg, only: [:show, :update, :destroy]
 
@@ -5,7 +6,6 @@ class KegsController < ApplicationController
   # GET /kegs.json
   def index
     @kegs = kegs.order('id DESC').all
-
 
     render json: @kegs
   end
@@ -50,11 +50,11 @@ class KegsController < ApplicationController
 
   private
 
-    def set_keg
-      @keg = Keg.find(params[:id])
-    end
+  def set_keg
+    @keg = Keg.find(params[:id])
+  end
 
-    def keg_params
-      params.require(:keg).permit(:name, :validation, :kicked, :ratings, :comments)
-    end
+  def keg_params
+    params.require(:keg).permit(:name, :validation, :kicked, :ratings, :comments)
+  end
 end
