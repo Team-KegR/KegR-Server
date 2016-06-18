@@ -4,7 +4,8 @@ class KegsController < ApplicationController
   # GET /kegs
   # GET /kegs.json
   def index
-    @kegs = Keg.all
+    @kegs = kegs.order('id DESC').all
+
 
     render json: @kegs
   end
